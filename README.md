@@ -27,7 +27,6 @@ $ kubectl delete -f service-myweb-v1.yaml
 ```
 To show details of the deployment,open the terminal and run:
 ```
-$ kubectl describe deployment my-web-deployment
+$ kubectl describe service my-multi-pods-service
 ```
-To connect IP and open server locally,open the terminal and run:
-```
+
