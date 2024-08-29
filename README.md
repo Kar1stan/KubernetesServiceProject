@@ -29,7 +29,9 @@ To show details of the service,open the terminal and run:
 ```
 $ kubectl describe service my-multi-pods-service
 ```
-To see results in the browser,paste external ip of the LoadBalancer with port of the container:
+To see results in the browser,paste External IP of the LoadBalancer with port of the container:
 
 Example - 10.109.141.45:80
+
+* in Windows External IP is forever "pending" ,so use Cluster IP instead
 
