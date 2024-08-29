@@ -17,11 +17,11 @@ $ cd KubernetesServiceProject
 ```
 
 ## 🚀 Run the manifest: 
-To run the deployment,open the terminal and run:
+To run the deployment with service,open the terminal and run:
 ```
 $ kubectl apply -f service-myweb-v1.yaml
 ```
-To delete deployment,open the terminal and run:
+To delete deployment with service,open the terminal and run:
 ```
 $ kubectl delete -f service-myweb-v1.yaml
 ```
