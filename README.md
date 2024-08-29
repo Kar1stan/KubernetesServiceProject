@@ -31,5 +31,5 @@ $ kubectl describe service my-multi-pods-service
 ```
 To see results in the browser,paste external ip of the LoadBalancer with port of the container:
 
-10.109.141.45:80
+Example - 10.109.141.45:80
 
