@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deployment-service
+  labels: 
+     app: my-k8s-application
+     env: prod
+     owner: VladislavKarastan
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+       project: kgb 
+  template:
+    metadata:
+       labels:
+         project: kgb # Service will look for those PODS Labels
+    spec:
+      containers:
+         - name : kgb-web
+           image: apache/kafka:latest
+           ports:
+            - containerPort: 80 # Port on POD
+          
+         - name : not-my-web
+           image: tomcat:latest
+           ports:
+            - containerPort: 8080 # Port on POD
+          
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-multi-pods-service
+  labels:
+    env: prod
+    owner: VladKarastan
+spec:
+  type: LoadBalancer
+  selector:
+    project: kgb # Selecting PODS with those Labels
+  ports:
+    - name      : kgb-web-listener
+      protocol  : TCP
+      port      : 80 #Port on LoadBalancer
+      targetPort: 80 #Port on POD
+
+    - name      : not-web-listener
+      protocol  : TCP
+      port      : 8888 #Port on LoadBalancer
+      targetPort: 8080 #Port on POD
+  
