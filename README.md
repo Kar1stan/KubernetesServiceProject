@@ -23,7 +23,7 @@ $ kubectl apply -f service-myweb-v1.yaml
 ```
 To delete deployment with service,open the terminal and run:
 ```
-$ kubectl delete -f service-myweb-v1.yaml
+$ kubectl delete service service-myweb-v1
 ```
 To show details of the service,open the terminal and run:
 ```
